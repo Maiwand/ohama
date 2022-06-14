@@ -102,8 +102,13 @@ a.click:hover {
   bottom: 0;
   transition: 0.2s;
 }
+
 .upgrade:hover {
   padding: 40px;
+  background: #fff;
+  display: grid;
+  place-items: end;
+  top: 120px;
 }
 .upgradecont {
   padding: 24px;
