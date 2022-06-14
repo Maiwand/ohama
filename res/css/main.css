@@ -1,0 +1,168 @@
+@import url(reset.css);
+
+:root {
+  --main: #5e81f4;
+  --main-hover: #506ed0;
+  --second: #f5f5fb;
+  --text: #8da1b5;
+  --text-hover: #272829;
+  --icon: #c7cadd;
+}
+
+body {
+  background: var(--second);
+  font-family: "Inter";
+}
+
+/*--------- Left Menu CSS ------------------*/
+.leftmenu {
+  background: #fff;
+  width: 272px;
+  height: 100vh;
+  float: left;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+
+.lm-1 {
+  margin: 48px 40px 0;
+  display: grid;
+  place-items: center;
+}
+.lm-1 img {
+  width: 127px;
+  height: auto;
+}
+
+a.click {
+  background-color: var(--main);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+  padding: 16px 0;
+  transition: 0.2s;
+  width: 100%;
+  display: inline-block;
+}
+
+.lm-1 a.click {
+  margin: 48px 0;
+}
+
+a.click:hover {
+  background-color: var(--main-hover);
+}
+
+.nav {
+  margin-left: 50px;
+  position: relative;
+}
+
+.nav ul li {
+  text-align: left;
+}
+
+.nav ul li > a {
+  font-size: 16px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 18px 0;
+  border-right: 0 solid var(--main);
+  width: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  transition: 0.2s;
+  transition-timing-function: cubic-bezier(0, 0, 0.18, 1.06);
+}
+.nav ul li > a:hover {
+  border-right-width: 3px;
+  color: var(--text-hover);
+}
+.nav ul li > a:hover i {
+  color: var(--main);
+}
+
+.nav ul li a i {
+  color: var(--icon);
+  vertical-align: middle;
+  font-size: 20px;
+  width: 70px;
+  text-align: center;
+  transition: 0.2s;
+  transition-timing-function: cubic-bezier(0, 0, 0.18, 1.06);
+}
+
+.upgrade {
+  position: absolute;
+  bottom: 0;
+  transition: 0.2s;
+}
+.upgrade:hover {
+  padding: 40px;
+}
+.upgradecont {
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  transition: 0.2s;
+}
+.upgrade:hover .upgradecont {
+  border-radius: 12px;
+  background-color: var(--second);
+}
+
+.upgradecont img {
+  width: 86px;
+  transform: translateY(280px);
+  opacity: 0;
+  margin-bottom: -64px;
+  transition: 0.2s;
+}
+
+.upgrade:hover .upgradecont img {
+  transform: translateY(-64px);
+  display: initial;
+  opacity: 1;
+  margin-bottom: 0;
+  transition: opacity 0.2s 0.1s, transform 0.2s;
+}
+
+.upgradecont p {
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 22px;
+  padding-top: 33px;
+  padding-bottom: 25px;
+  transform: translateY(280px);
+  margin-top: -280px;
+}
+.upgrade:hover .upgradecont p {
+  transform: translateY(0px);
+  margin-top: -64px;
+}
+.upgradecont p span {
+  color: var(--main);
+  font-weight: 600;
+}
+
+/*--------- Right Calender CSS ------------------*/
+.rightcal {
+  background: red;
+  height: 100vh;
+  float: right;
+  width: 384px;
+  position: sticky;
+  top: 0;
+}
+
+.main {
+  margin-right: 384px;
+  margin-left: 272px;
+}
