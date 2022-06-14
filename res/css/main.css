@@ -1,5 +1,5 @@
 @import url(reset.css);
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap");
 :root {
   --main: #5e81f4;
   --main-hover: #506ed0;
@@ -11,7 +11,7 @@
 
 body {
   background: var(--second);
-  font-family: "Inter";
+  font-family: Inter, "Inter";
 }
 
 /*--------- Left Menu CSS ------------------*/
