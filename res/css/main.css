@@ -108,7 +108,7 @@ a.click:hover {
   background: #fff;
   display: grid;
   place-items: end;
-  top: 120px;
+  top: 400px;
 }
 .upgradecont {
   padding: 24px;
