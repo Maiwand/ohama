@@ -222,13 +222,15 @@ a.click:hover {
 }
 .cal-element .course-icon {
   font-size: 22px;
-  background-color: red;
   width: 48px;
   height: 48px;
   display: grid;
   place-items: center;
   border-radius: 6px;
   float: left;
+}
+.cal-element {
+  cursor: pointer;
 }
 
 .cal-element .course-name {
@@ -239,6 +241,10 @@ a.click:hover {
   justify-content: space-between;
   padding: 3px 18px;
   box-sizing: border-box;
+  transition: 0.1s;
+}
+.cal-element:hover .course-name {
+  padding: 5px 18px;
 }
 .cal-element .course-name h6 {
   font-size: 16px;
@@ -289,6 +295,7 @@ a.click:hover {
 .cal-element.blue .course-icon,
 .cal-element.blue .progress-bar-bg {
   background-color: #d3f4fb;
+  transition: 0.2s;
 }
 .cal-element.blue .progress-bar {
   background-color: #0cc3e7;
@@ -296,7 +303,15 @@ a.click:hover {
 }
 .cal-element.blue .course-icon i {
   color: #0cc3e7;
+  transition: 0.2s;
 }
+.cal-element.blue:hover .course-icon {
+  background-color: #0cc3e7;
+}
+.cal-element.blue:hover .course-icon i {
+  color: #d3f4fb;
+}
+
 /* Orange Code */
 .cal-element.orange .course-icon,
 .cal-element.orange .progress-bar-bg {
