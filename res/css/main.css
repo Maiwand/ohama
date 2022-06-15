@@ -7,6 +7,7 @@
   --text: #8da1b5;
   --text-hover: #272829;
   --icon: #c7cadd;
+  --soft: #83919e;
 }
 
 body {
@@ -161,16 +162,147 @@ a.click:hover {
   font-weight: 600;
 }
 
-/*--------- Right Calender CSS ------------------*/
+/*!--------- Right Calender CSS ------------------*/
 .rightcal {
-  background: red;
+  background: #fff;
   height: 100vh;
   float: right;
   width: 384px;
   position: sticky;
   top: 0;
+  padding: 48px 40px;
+  box-sizing: border-box;
+}
+.calcont {
+}
+.profile {
+  display: flex;
+  place-items: center;
+  margin-bottom: 48px;
+}
+.profile img {
+  width: 55px;
+  border-radius: 12px;
+}
+.profile p {
+  color: var(--text-hover);
+  font-size: 20px;
+  font-weight: 600;
+  display: inline;
+  vertical-align: middle;
+  opacity: 0.8;
+  padding: 0 25px;
 }
 
+.profile span {
+  color: #768492;
+  font-size: 18px;
+}
+.cal-element-parent {
+  margin-bottom: 64px;
+}
+.cal-element-parent h5 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-hover);
+  margin-bottom: 30px;
+}
+.cal-element-parent .cal-element {
+  margin-bottom: 25px;
+  position: relative;
+}
+.cal-element .course-icon {
+  font-size: 22px;
+  background-color: red;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  float: left;
+}
+
+.cal-element .course-name {
+  display: flex;
+  place-items: start;
+  flex-direction: column;
+  height: 48px;
+  justify-content: space-between;
+  padding: 3px 18px;
+  box-sizing: border-box;
+}
+.cal-element .course-name h6 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-hover);
+}
+.cal-element .course-name p {
+  font-size: 14px;
+  color: var(--soft);
+}
+
+.progress-bar-parent {
+  height: 48px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+}
+.progress-bar-bg {
+  width: 100px;
+  height: 8px;
+  background-color: #dfe6fd;
+  border-radius: 50px;
+  position: relative;
+}
+.progress-bar {
+  width: 50px;
+  height: 8px;
+  background-color: #5e81f4;
+  border-radius: 50px;
+  position: absolute;
+}
+/* Purple Code */
+.cal-element.purple .course-icon,
+.cal-element.purple .progress-bar-bg {
+  background-color: #dfe6fd;
+}
+.cal-element.purple .progress-bar {
+  background-color: #5e81f4;
+  width: 75px;
+}
+.cal-element.purple .course-icon i {
+  color: #5e81f4;
+}
+
+/* Blue Code */
+.cal-element.blue .course-icon,
+.cal-element.blue .progress-bar-bg {
+  background-color: #d3f4fb;
+}
+.cal-element.blue .progress-bar {
+  background-color: #0cc3e7;
+  width: 40px;
+}
+.cal-element.blue .course-icon i {
+  color: #0cc3e7;
+}
+/* Orange Code */
+.cal-element.orange .course-icon,
+.cal-element.orange .progress-bar-bg {
+  background-color: #ffefd6;
+}
+.cal-element.orange .progress-bar {
+  background-color: #ffae33;
+  width: 65px;
+}
+.cal-element.orange .course-icon i {
+  color: #ffae33;
+}
+/*!--------- Right Calender CSS ------------------*/
+
+/*--------- Right Calender CSS ------------------*/
 .main {
   margin-right: 384px;
   margin-left: 272px;
