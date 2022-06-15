@@ -179,6 +179,15 @@ a.click:hover {
   display: flex;
   place-items: center;
   margin-bottom: 48px;
+  padding: 10px 30px 10px 10px;
+  margin: -10px -10px 48px -10px;
+  border-radius: 20px;
+  transition: 0.2s;
+  cursor: pointer;
+  width: fit-content;
+}
+.profile:hover {
+  background: #ececec;
 }
 .profile img {
   width: 55px;
