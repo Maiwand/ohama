@@ -1,4 +1,5 @@
 @import url(reset.css);
+@import url(grid.css);
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap");
 :root {
   --main: #5e81f4;
@@ -8,14 +9,19 @@
   --text-hover: #272829;
   --icon: #c7cadd;
   --soft: #83919e;
+  --text-main: #011f3b;
 }
 
 body {
   background: var(--second);
   font-family: Inter, "Inter";
+  box-sizing: border-box;
 }
 .hide {
   display: none !important;
+}
+.mb30 {
+  margin-bottom: 30px;
 }
 /*--------- Left Menu CSS ------------------*/
 .leftmenu {
@@ -23,7 +29,7 @@ body {
   width: 272px;
   height: 100vh;
   float: left;
-  position: sticky;
+  position: fixed;
   top: 0;
   overflow: hidden;
 }
@@ -82,10 +88,12 @@ a.click:hover {
   transition: 0.2s;
   transition-timing-function: cubic-bezier(0, 0, 0.18, 1.06);
 }
+.nav ul li.active > a,
 .nav ul li > a:hover {
   border-right-width: 3px;
   color: var(--text-hover);
 }
+.nav ul li.active > a i,
 .nav ul li > a:hover i {
   color: var(--main);
 }
@@ -170,8 +178,9 @@ a.click:hover {
   height: 100vh;
   float: right;
   width: 384px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
   padding: 48px 40px;
   box-sizing: border-box;
 }
@@ -328,13 +337,14 @@ a.click:hover {
 
 /*--------- Main Course CSS ------------------*/
 .main {
-  /* margin-right: 384px;
-  margin-left: 272px; */
-  padding: 48px 40px;
+  margin-right: 384px;
+  margin-left: 272px;
+  padding: 48px 25px;
 }
 
 .top-bar {
   display: flow-root;
+  padding: 0 15px;
 }
 .search-parent {
   float: left;
@@ -345,7 +355,9 @@ a.click:hover {
 .search-parent input::placeholder {
   color: #ccd6e8;
 }
-
+.intro {
+  padding: 0 15px;
+}
 .search-parent label {
   position: absolute;
   left: 28px;
@@ -368,6 +380,7 @@ a.click:hover {
 .search-parent input:focus {
   outline: none;
   box-shadow: 0 15px 46px #5e81f423;
+  width: 500px;
 }
 .notify {
   float: right;
@@ -375,7 +388,14 @@ a.click:hover {
   place-items: center;
   height: 56px;
 }
-
+.notify a {
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+.notify a:hover {
+  background: #fff;
+}
 .notify i {
   font-size: 26px;
   color: #768492;
@@ -383,4 +403,154 @@ a.click:hover {
 
 .main-content {
   margin-top: 48px;
+}
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+.title h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-main);
+  float: left;
+}
+.select-menu {
+  float: right;
+}
+.select-menu ul li {
+  display: inline;
+}
+.select-menu ul li a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #768492;
+  text-decoration: none;
+  padding: 0 0 10px 50px;
+  position: relative;
+  transition: 0.2s;
+}
+
+.select-menu ul li:hover a,
+.select-menu ul li.active a {
+  color: var(--main);
+}
+.select-menu ul li a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--main);
+  border-radius: 5px;
+  bottom: 0;
+  left: 50%;
+  transform: translateY(-50%);
+  margin-left: 27px;
+  transition: 0.2s;
+}
+
+.select-menu ul li:hover a:after,
+.select-menu ul li.active a:after {
+  width: 18px;
+  margin-left: 18px;
+}
+
+.course {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+  background-color: var(--soft);
+  padding: 32px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.course .top-info {
+  text-shadow: 0 0 35px black;
+}
+.course.light .top-info {
+  text-shadow: none;
+}
+.course .top-info,
+.course .bottom-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-info .course-info h3 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.course.light .top-info .course-info h3 {
+  color: var(--text-main);
+}
+
+.top-info .course-info p {
+  font-size: 18px;
+  color: #fff;
+}
+.course.light .top-info .course-info p {
+  color: var(--text-main);
+}
+
+.top-info .course-duration p {
+  color: #fff;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.course.light .top-info .course-duration p {
+  color: var(--text-main);
+}
+.bottom-info .course-play a {
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 46px;
+  height: 46px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.course:hover .bottom-info .course-play a {
+  width: 60px;
+  background-color: #fff;
+  color: #000;
+}
+
+.bottom-info .course-teacher img {
+  width: 40px;
+  border-radius: 50px;
+  border: 1.6px solid #fff;
+}
+
+.course-ui {
+  background: url(../img/ui.jpg) center;
+}
+.course-photography {
+  background: url(../img/photography.jpg) center;
+}
+.course-animation {
+  background: url(../img/animation.jpg) center;
+}
+.course-business {
+  background: url(../img/business.jpg) center;
+}
+.course-editing {
+  background: url(../img/editing.jpg) center;
+}
+.course-web {
+  background: url(../img/web.jpg) center;
+}
+.course {
+  background-size: cover;
 }
