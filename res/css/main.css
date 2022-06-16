@@ -524,7 +524,7 @@ a.click:hover {
 .course:hover .bottom-info .course-play a {
   width: 60px;
   background-color: #fff;
-  color: #fff;
+  color: #000;
 }
 
 .bottom-info .course-teacher img {
