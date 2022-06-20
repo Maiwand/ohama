@@ -469,6 +469,9 @@ a.click:hover {
   background: #fff;
   padding: 36px;
   border-radius: 16px;
+  min-height: 400px;
+  display: grid;
+  align-content: space-between;
 }
 .data-card h3 {
   font-size: 24px;
