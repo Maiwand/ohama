@@ -1,0 +1,556 @@
+@import url(reset.css);
+@import url(grid.css);
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap");
+:root {
+  --main: #5e81f4;
+  --main-hover: #506ed0;
+  --second: #f5f5fb;
+  --text: #8da1b5;
+  --text-hover: #272829;
+  --icon: #c7cadd;
+  --soft: #83919e;
+  --text-main: #011f3b;
+}
+
+body {
+  background: var(--second);
+  font-family: Inter, "Inter";
+  box-sizing: border-box;
+}
+.hide {
+  display: none !important;
+}
+.mb30 {
+  margin-bottom: 30px;
+}
+/*--------- Left Menu CSS ------------------*/
+.leftmenu {
+  background: #fff;
+  width: 272px;
+  height: 100vh;
+  float: left;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+}
+
+.lm-1 {
+  margin: 48px 40px 0;
+  display: grid;
+  place-items: center;
+}
+.lm-1 img {
+  width: 127px;
+  height: auto;
+}
+
+a.click {
+  background-color: var(--main);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+  padding: 16px 0;
+  transition: 0.2s;
+  width: 100%;
+  display: inline-block;
+}
+
+.lm-1 a.click {
+  margin: 48px 0;
+}
+
+a.click:hover {
+  background-color: var(--main-hover);
+}
+
+.nav {
+  margin-left: 50px;
+  position: relative;
+}
+
+.nav ul li {
+  text-align: left;
+}
+
+.nav ul li > a {
+  font-size: 16px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 18px 0;
+  border-right: 0 solid var(--main);
+  width: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  transition: 0.2s;
+  transition-timing-function: cubic-bezier(0, 0, 0.18, 1.06);
+}
+.nav ul li.active > a,
+.nav ul li > a:hover {
+  border-right-width: 3px;
+  color: var(--text-hover);
+}
+.nav ul li.active > a i,
+.nav ul li > a:hover i {
+  color: var(--main);
+}
+
+.nav ul li a i {
+  color: var(--icon);
+  vertical-align: middle;
+  font-size: 20px;
+  width: 70px;
+  text-align: center;
+  transition: 0.2s;
+  transition-timing-function: cubic-bezier(0, 0, 0.18, 1.06);
+}
+
+.upgrade {
+  position: absolute;
+  bottom: 0;
+  transition: 0.2s;
+}
+
+.upgrade:hover {
+  padding: 40px;
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 70%) 5%,
+    rgb(255 255 255) 35%
+  );
+  display: grid;
+  place-items: end;
+  top: 210px;
+}
+.upgradecont {
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  transition: 0.2s;
+}
+.upgrade:hover .upgradecont {
+  border-radius: 12px;
+  background-color: var(--second);
+}
+
+.upgradecont img {
+  width: 86px;
+  transform: translateY(280px);
+  opacity: 0;
+  margin-bottom: -64px;
+  transition: 0.2s;
+}
+
+.upgrade:hover .upgradecont img {
+  transform: translateY(-64px);
+  display: initial;
+  opacity: 1;
+  margin-bottom: 0;
+  transition: opacity 0.2s 0.1s, transform 0.2s;
+}
+
+.upgradecont p {
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 22px;
+  padding-top: 33px;
+  padding-bottom: 25px;
+  transform: translateY(280px);
+  margin-top: -280px;
+}
+.upgrade:hover .upgradecont p {
+  transform: translateY(0px);
+  margin-top: -64px;
+}
+.upgradecont p span {
+  color: var(--main);
+  font-weight: 600;
+}
+
+/*!--------- Right Calender CSS ------------------*/
+.rightcal {
+  background: #fff;
+  height: 100vh;
+  float: right;
+  width: 384px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 48px 40px;
+  box-sizing: border-box;
+}
+.profile {
+  display: flex;
+  place-items: center;
+  margin-bottom: 48px;
+  padding: 10px 30px 10px 10px;
+  margin: -10px -10px 48px -10px;
+  border-radius: 20px;
+  transition: 0.2s;
+  cursor: pointer;
+  width: fit-content;
+}
+.profile:hover {
+  background: #ececec;
+}
+.profile img {
+  width: 55px;
+  border-radius: 12px;
+}
+.profile p {
+  color: var(--text-hover);
+  font-size: 20px;
+  font-weight: 600;
+  display: inline;
+  vertical-align: middle;
+  opacity: 0.8;
+  padding: 0 25px;
+}
+
+.profile span {
+  color: #768492;
+  font-size: 18px;
+}
+.cal-element-parent {
+  margin-bottom: 64px;
+}
+.cal-element-parent h5 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-hover);
+  margin-bottom: 30px;
+}
+.cal-element-parent .cal-element {
+  margin-bottom: 25px;
+  position: relative;
+}
+.cal-element .course-icon {
+  font-size: 22px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  float: left;
+}
+.cal-element {
+  cursor: pointer;
+}
+
+.cal-element .course-name {
+  display: flex;
+  place-items: start;
+  flex-direction: column;
+  height: 48px;
+  justify-content: space-between;
+  padding: 3px 18px;
+  box-sizing: border-box;
+  transition: 0.1s;
+}
+.cal-element:hover .course-name {
+  padding: 5px 18px;
+}
+.cal-element .course-name h6 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-hover);
+}
+.cal-element .course-name p {
+  font-size: 14px;
+  color: var(--soft);
+}
+
+.progress-bar-parent {
+  height: 48px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+}
+.progress-bar-bg {
+  width: 100px;
+  height: 8px;
+  background-color: #dfe6fd;
+  border-radius: 50px;
+  position: relative;
+}
+.progress-bar {
+  width: 50px;
+  height: 8px;
+  background-color: #5e81f4;
+  border-radius: 50px;
+  position: absolute;
+}
+/* Purple Code */
+.cal-element.purple .course-icon,
+.cal-element.purple .progress-bar-bg {
+  background-color: #dfe6fd;
+}
+.cal-element.purple .progress-bar {
+  background-color: #5e81f4;
+  width: 75px;
+}
+.cal-element.purple .course-icon i {
+  color: #5e81f4;
+}
+
+/* Blue Code */
+.cal-element.blue .course-icon,
+.cal-element.blue .progress-bar-bg {
+  background-color: #d3f4fb;
+  transition: 0.2s;
+}
+.cal-element.blue .progress-bar {
+  background-color: #0cc3e7;
+  width: 40px;
+}
+.cal-element.blue .course-icon i {
+  color: #0cc3e7;
+  transition: 0.2s;
+}
+.cal-element.blue:hover .course-icon {
+  background-color: #0cc3e7;
+}
+.cal-element.blue:hover .course-icon i {
+  color: #d3f4fb;
+}
+
+/* Orange Code */
+.cal-element.orange .course-icon,
+.cal-element.orange .progress-bar-bg {
+  background-color: #ffefd6;
+}
+.cal-element.orange .progress-bar {
+  background-color: #ffae33;
+  width: 65px;
+}
+.cal-element.orange .course-icon i {
+  color: #ffae33;
+}
+/*!--------- Right Calender CSS ------------------*/
+
+/*--------- Main Course CSS ------------------*/
+.main {
+  margin-right: 384px;
+  margin-left: 272px;
+  padding: 48px 25px;
+}
+
+.top-bar {
+  display: flow-root;
+  padding: 0 15px;
+}
+.search-parent {
+  float: left;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.search-parent input::placeholder {
+  color: #ccd6e8;
+}
+.intro {
+  padding: 0 15px;
+}
+.search-parent label {
+  position: absolute;
+  left: 28px;
+  font-size: 16px;
+  color: #ccd6e8;
+}
+.search-parent input {
+  height: 56px;
+  border: none;
+  font-size: 15px;
+  padding-left: 58px;
+  border-radius: 10px;
+  width: 460px;
+  transition: 0.1s;
+}
+
+.search-parent input:hover {
+  box-shadow: 0 15px 46px #5e81f40c;
+}
+.search-parent input:focus {
+  outline: none;
+  box-shadow: 0 15px 46px #5e81f423;
+  width: 500px;
+}
+.notify {
+  float: right;
+  display: grid;
+  place-items: center;
+  height: 56px;
+}
+.notify a {
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+.notify a:hover {
+  background: #fff;
+}
+.notify i {
+  font-size: 26px;
+  color: #768492;
+}
+
+.main-content {
+  margin-top: 48px;
+}
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+.title h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-main);
+  float: left;
+}
+.select-menu {
+  float: right;
+}
+.select-menu ul li {
+  display: inline;
+}
+.select-menu ul li a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #768492;
+  text-decoration: none;
+  padding: 0 0 10px 50px;
+  position: relative;
+  transition: 0.2s;
+}
+
+.select-menu ul li:hover a,
+.select-menu ul li.active a {
+  color: var(--main);
+}
+.select-menu ul li a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--main);
+  border-radius: 5px;
+  bottom: 0;
+  left: 50%;
+  transform: translateY(-50%);
+  margin-left: 27px;
+  transition: 0.2s;
+}
+
+.select-menu ul li:hover a:after,
+.select-menu ul li.active a:after {
+  width: 18px;
+  margin-left: 18px;
+}
+
+.course {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+  background-color: var(--soft);
+  padding: 32px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.course .top-info {
+  text-shadow: 0 0 35px black;
+}
+.course.light .top-info {
+  text-shadow: none;
+}
+.course .top-info,
+.course .bottom-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-info .course-info h3 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.course.light .top-info .course-info h3 {
+  color: var(--text-main);
+}
+
+.top-info .course-info p {
+  font-size: 18px;
+  color: #fff;
+}
+.course.light .top-info .course-info p {
+  color: var(--text-main);
+}
+
+.top-info .course-duration p {
+  color: #fff;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.course.light .top-info .course-duration p {
+  color: var(--text-main);
+}
+.bottom-info .course-play a {
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 46px;
+  height: 46px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.course:hover .bottom-info .course-play a {
+  width: 60px;
+  background-color: #fff;
+  color: #000;
+}
+
+.bottom-info .course-teacher img {
+  width: 40px;
+  border-radius: 50px;
+  border: 1.6px solid #fff;
+}
+
+.course-ui {
+  background: url(../img/ui.jpg) center;
+}
+.course-photography {
+  background: url(../img/photography.jpg) center;
+}
+.course-animation {
+  background: url(../img/animation.jpg) center;
+}
+.course-business {
+  background: url(../img/business.jpg) center;
+}
+.course-editing {
+  background: url(../img/editing.jpg) center;
+}
+.course-web {
+  background: url(../img/web.jpg) center;
+}
+.course {
+  background-size: cover;
+}
